@@ -46,7 +46,8 @@ setTimeout(function () {
 
 // Ora chiedo i numeri all'utente, mi inizializzo le variabili e aggiungo un event listener al pulsante
 
-let numeriUtente = []; // array di numeri inseriti dall'utente
+let userNumberArray = []; // array di numeri inseriti dall'utente
+console.log(userNumberArray);
 const maxInput = 5;
 let inputCounter = 0;
 
@@ -54,10 +55,11 @@ const userNumber = document.querySelector("input");
 const button = document.querySelector("button");
 const risultati = document.querySelector("#risultati");
 
+// aggiungo un massimo di 5 numeri dentro l'array usernumberArray
 button.addEventListener("click", function() {
   if (inputCounter < maxInput) {
-    const numero = Number(userNumber.value);
     inputCounter++;
+    userNumberArray.push(userNumber.value)
     userNumber.value = "";
 
     if (inputCounter === maxInput) {
@@ -66,7 +68,6 @@ button.addEventListener("click", function() {
     }
   }
 });
-
 
 
 
