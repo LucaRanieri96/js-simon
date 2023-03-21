@@ -10,9 +10,15 @@ let min = 1;
 let max = 100;
 
 function getRndInteger(min, max) {
+  // inizializzo un array per salvarmi i 5 numeri da qualche parte
+  let randomNums = [];
+
+  // ciclo per generare 5 numeri
   for (let i = 0; i < 5; i++) {
     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log(randomNum);
+    randomNums.push(randomNum);
   }
-  return randomNum;
+  return randomNums;
 }
+
+console.log(getRndInteger(min, max));
