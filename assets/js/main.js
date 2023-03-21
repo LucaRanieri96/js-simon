@@ -21,10 +21,11 @@ function getRndInteger(min, max) {
   return randomNums;
 }
 
-console.log(getRndInteger(min, max));
+//console.log(getRndInteger(min, max));
 
 // Metto dentro i blocchi colorati i numeri generati randomicamente
 let numbers = getRndInteger(min, max);
+console.log(numbers);
 
 let blocks = document.querySelectorAll(".my_square");
 
