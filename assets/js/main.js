@@ -25,7 +25,7 @@ function getRndInteger(min, max) {
 
 // Metto dentro i blocchi colorati i numeri generati randomicamente
 let numbers = getRndInteger(min, max);
-console.log(numbers);
+console.log("computer Array", numbers);
 
 let blocks = document.querySelectorAll(".my_square");
 
@@ -48,7 +48,6 @@ setTimeout(function () {
 // Ora chiedo i numeri all'utente, mi inizializzo le variabili e aggiungo un event listener al pulsante
 
 let userNumberArray = []; // array di numeri inseriti dall'utente
-console.log(userNumberArray);
 const maxInput = 5;
 let inputCounter = 0;
 
@@ -57,29 +56,17 @@ const button = document.querySelector("button");
 const correctNumbers = document.querySelector("#corretti");
 
 // aggiungo un massimo di 5 numeri dentro l'array usernumberArray
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
   if (inputCounter < maxInput) {
     inputCounter++;
-    userNumberArray.push(userNumber.value)
+    userNumberArray.push(userNumber.value);
     userNumber.value = "";
+    console.log("userArray", userNumberArray);
 
     if (inputCounter === maxInput) {
       userNumber.disabled = true;
-      button.disabled = true; 
+      button.disabled = true;
     }
-
-    let commonNumbers = [];
-    
-    for (let i = 0; i < userNumberArray.length; i++) {
-      for (let j = 0; j < numbers.length; j++) {
-        if (userNumberArray[i] === numbers[j]) {
-          commonNumbers.push(userNumberArray[i]);
-        }
-      }
-    }
-    
-    console.log(commonNumbers);
-
   }
 });
 
@@ -87,13 +74,18 @@ button.addEventListener("click", function() {
 
 // mi creo un array in cui inserisco i numeri che gli array hanno in comune, almeno questi li stampo nei numeri corretti
 
+let commonNumbers = [];
+
+// ciclo i numeri dell'utente
+for (let i = 0; i < userNumberArray.length; i++) {
+  // ciclo i numeri del computer
+  for (let j = 0; j < numbers.length; j++) {
+    // se il numero dell'utente è uguale a quello del computer allora lo pusho nell'array dei numeri in comune
+    if (userNumberArray[i] === numbers[j]) {
+      commonNumbers.push(userNumberArray[i]);
+    }
+  }
+}
+
+console.log(commonNumbers);
 // adesso stampo i commonNumbers nel p con id="corretti"
-
-
-
-
-
-
-
-
-
