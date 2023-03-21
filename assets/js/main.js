@@ -49,9 +49,13 @@ setTimeout(function () {
 const listaNumeri = [];
 const maxInput = 5; // numero massimo di input
 let inputCounter = 0; // contatore di input
+let corretti = 0; // contatore di numeri corretti
+let sbagliati = 0; // contatore di numeri sbagliati
 
 const userNumber = document.querySelector("input");
 const button = document.querySelector("button");
+const correttiOutput = document.querySelector("#corretti");
+const sbagliatiOutput = document.querySelector("#sbagliati");
 
 button.addEventListener("click", function() {
   if (inputCounter < maxInput) { // controlla se il numero di input è inferiore al massimo
@@ -65,9 +69,22 @@ button.addEventListener("click", function() {
       button.disabled = true;
     }
     
+    // Ora vedo se i due array hanno gli stessi valori
+
+    for (let i = 0; i < listaNumeri.length; i++) {
+      if (numero === listaNumeri[i]) {
+        corretti++;
+      } else {
+        sbagliati++;
+      }
+    }
+    
+    correttiOutput.textContent = `Numeri corretti: ${corretti}`;
+    sbagliatiOutput.textContent = `Numeri sbagliati: ${sbagliati}`;
+  }
     console.log(listaNumeri);
   }
-});
+);
 
 
 
