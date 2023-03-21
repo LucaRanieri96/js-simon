@@ -5,3 +5,14 @@ Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i 
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. 
 */
 
+// Mi scrivo la funzione per generare automaticamente 5 numeri randomici tra 1 e 100
+let min = 1;
+let max = 100;
+
+function getRndInteger(min, max) {
+  for (let i = 0; i < 5; i++) {
+    let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomNum);
+  }
+  return randomNum;
+}
