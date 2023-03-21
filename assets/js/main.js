@@ -31,3 +31,9 @@ let blocks = document.querySelectorAll(".my_square");
 for (let i = 0; i < blocks.length; i++) {
   blocks[i].innerHTML = numbers[i];
 }
+
+// Mi genero una funzione timeout per far vedere i numeri dentro i blocchi solo per 5 secondi
+
+setTimeout(function () {
+  blocks.classList.add("hidden");
+}, 5000);
