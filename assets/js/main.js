@@ -53,7 +53,7 @@ let inputCounter = 0;
 
 const userNumber = document.querySelector("input");
 const button = document.querySelector("button");
-const risultati = document.querySelector("#risultati");
+const corretti = document.querySelector("#corretti");
 
 // aggiungo un massimo di 5 numeri dentro l'array usernumberArray
 button.addEventListener("click", function() {
@@ -68,6 +68,25 @@ button.addEventListener("click", function() {
     }
   }
 });
+
+// ora devo confrontare i due array e vedere se ci sono dei numeri uguali, se si, li stampo nei numeri corretti, sennò in quelli sbagliati
+
+// mi creo un array in cui inserisco i numeri che gli array hanno in comune, almeno questi li stampo nei numeri corretti
+let commonNumbers = [];
+
+for (let i = 0; i < userNumberArray.length; i++) {
+  for (let j = 0; j < numbers.length; j++) {
+    if (userNumberArray[i] === numbers[j]) {
+      commonNumbers.push(userNumberArray[i]);
+    }
+  }
+}
+
+console.log(commonNumbers);
+
+// adesso stampo i commonNumbers nel p con id="corretti"
+
+
 
 
 
