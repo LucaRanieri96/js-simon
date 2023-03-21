@@ -34,20 +34,46 @@ for (let i = 0; i < blocks.length; i++) {
 
 // Mi genero una funzione timeout per far vedere i numeri dentro i blocchi solo per 30 secondi
 let container = document.querySelector(".my_cont");
-let title = document.querySelector("h1")
+let title = document.querySelector("h1");
 
-let show = document.getElementById("show")
+let show = document.getElementById("show");
 
 setTimeout(function () {
   container.classList.add("d-none");
   title.classList.add("d-none");
-  show.classList.remove("d-none")
+  show.classList.remove("d-none");
 }, 5000);
 
 // Ora chiedo i numeri all'utente, mi inizializzo le variabili e aggiungo un event listener al pulsante
 
-const input = document.querySelector("input");
+const listaNumeri = [];
+const maxInput = 5; // numero massimo di input
+let inputCounter = 0; // contatore di input
+
+const userNumber = document.querySelector("input");
 const button = document.querySelector("button");
 
-button.addEventListener("click");
+button.addEventListener("click", function() {
+  if (inputCounter < maxInput) { // controlla se il numero di input è inferiore al massimo
+    const numero = Number(userNumber.value);
+    listaNumeri.push(numero);
+    userNumber.value = "";
+    inputCounter++;
+
+    if (inputCounter === maxInput) { // disabilito gli input quando il maxinput raggiunge l'inputcounter
+      userNumber.disabled = true;
+      button.disabled = true;
+    }
+    
+    console.log(listaNumeri);
+  }
+});
+
+
+
+
+
+
+
+
 
