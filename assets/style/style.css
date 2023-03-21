@@ -1,3 +1,31 @@
 body {
-    background-color: rgb(55, 55, 55);
+  background-color: rgb(55, 55, 55);
+}
+
+.my_square {
+  height: 200px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  font-size: 20px;
+  color: white;
+}
+
+.bg_blue {
+  background-color: blue;
+}
+
+.bg_red {
+  background-color: red;
+}
+
+.bg_orange {
+  background-color: rgb(255, 128, 0);
+}
+
+.bg_green {
+  background-color: green;
+}
+
+.bg_yellow {
+  background-color: yellow;
 }
