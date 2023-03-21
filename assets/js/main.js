@@ -22,3 +22,12 @@ function getRndInteger(min, max) {
 }
 
 console.log(getRndInteger(min, max));
+
+// Metto dentro i blocchi colorati i numeri generati randomicamente
+let numbers = getRndInteger(min, max);
+
+let blocks = document.querySelectorAll(".my_square");
+
+for (let i = 0; i < blocks.length; i++) {
+  blocks[i].innerHTML = numbers[i];
+}
