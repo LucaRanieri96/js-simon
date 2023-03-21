@@ -33,7 +33,8 @@ for (let i = 0; i < blocks.length; i++) {
 }
 
 // Mi genero una funzione timeout per far vedere i numeri dentro i blocchi solo per 5 secondi
+let container = document.querySelector(".container")
 
 setTimeout(function () {
-  blocks.classList.add("hidden");
+  container.classList.add("hidden");
 }, 5000);
