@@ -32,9 +32,14 @@ for (let i = 0; i < blocks.length; i++) {
   blocks[i].innerHTML = numbers[i];
 }
 
-// Mi genero una funzione timeout per far vedere i numeri dentro i blocchi solo per 5 secondi
-let container = document.querySelector(".container")
+// Mi genero una funzione timeout per far vedere i numeri dentro i blocchi solo per 30 secondi
+let container = document.querySelector(".my_cont");
+let title = document.querySelector("h1")
+
+let show = document.getElementById("show")
 
 setTimeout(function () {
-  container.classList.add("hidden");
-}, 5000);
+  container.classList.add("d-none");
+  title.classList.add("d-none");
+  show.classList.remove("d-none")
+}, 1000);
