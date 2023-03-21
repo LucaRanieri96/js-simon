@@ -42,4 +42,12 @@ setTimeout(function () {
   container.classList.add("d-none");
   title.classList.add("d-none");
   show.classList.remove("d-none")
-}, 1000);
+}, 5000);
+
+// Ora chiedo i numeri all'utente, mi inizializzo le variabili e aggiungo un event listener al pulsante
+
+const input = document.querySelector("input");
+const button = document.querySelector("button");
+
+button.addEventListener("click");
+
